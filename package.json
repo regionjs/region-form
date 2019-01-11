@@ -1,0 +1,57 @@
+{
+  "name": "region-shortcut",
+  "version": "0.6.1",
+  "description": "region-shortcut",
+  "keywords": [
+    "react",
+    "region-core",
+    "region-shortcut"
+  ],
+  "repository": "github:regionjs/region-shortcut",
+  "license": "MIT",
+  "author": "Cong Zhang <dancerphil1994@gmail.com>",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "rm -rf lib/ && babel src --out-dir lib --ignore **/*.test.js",
+    "check": "npm run build && npm run lint && npm run test",
+    "codecov": "jest --colors --coverage && codecov",
+    "lint": "eslint --ignore-path .gitignore --ext .js,jsx ./src",
+    "prepublish": "npm run check",
+    "test": "jest --colors --coverage"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run check"
+    }
+  },
+  "jest": {
+    "testURL": "http://localhost/",
+    "verbose": true
+  },
+  "dependencies": {
+    "region-core": "^0.6.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "codecov": "^3.0.4",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.18.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.3.1",
+    "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
+    "react": "^16.6.3"
+  },
+  "peerDependencies": {
+    "react": "^16.6.0"
+  }
+}
