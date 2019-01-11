@@ -1,5 +1,3 @@
-import { Region } from 'region-core';
-
-class RegionForm extends Region {}
+import { RegionForm } from './RegionForm';
 
 export { RegionForm };
