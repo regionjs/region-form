@@ -1,6 +1,6 @@
 {
   "name": "region-form",
-  "version": "0.6.1",
+  "version": "0.6.3",
   "description": "region-form",
   "keywords": [
     "react",
@@ -12,7 +12,7 @@
   "author": "Cong Zhang <dancerphil1994@gmail.com>",
   "main": "./lib/index.js",
   "scripts": {
-    "build": "rm -rf lib/ && babel src --out-dir lib --ignore **/*.test.js",
+    "build": "rm -rf lib/ && babel src --out-dir lib --ignore **/*.test.js,**/*.test.jsx",
     "check": "npm run build && npm run lint && npm run test",
     "codecov": "jest --colors --coverage && codecov",
     "lint": "eslint --ignore-path .gitignore --ext .js,jsx ./src",
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.11",
-    "region-core": "^0.6.1"
+    "region-core": "^0.6.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
@@ -52,7 +52,8 @@
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-test-renderer": "^16.7.0"
   },
   "peerDependencies": {
     "react": "^16.6.0",
