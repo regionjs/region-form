@@ -1,5 +1,4 @@
-import { Region } from 'region-core';
+import { getProvider } from 'region-core';
+import RegionForm from './RegionForm';
 
-class RegionForm extends Region {}
-
-export { RegionForm };
+export { getProvider, RegionForm };
