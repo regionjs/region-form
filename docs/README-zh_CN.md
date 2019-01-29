@@ -5,15 +5,15 @@
 [![codecov](https://codecov.io/gh/dancerphil/redux-loadings/branch/develop/graph/badge.svg)](https://codecov.io/gh/dancerphil/redux-loadings)
 [![MIT License](https://img.shields.io/npm/l/redux-loadings.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
-Bind with ant-design form item, automatic data control. Extremely simple API!
+双向绑定的 ant-design 表单，自动的数据管理。极其简单的 API！
 
-English | [中文](https://github.com/regionjs/region-form/blob/master/docs/README-zh_CN.md)
+[English](https://github.com/regionjs/region-form/blob/master/docs/README.md) | 中文
 
 | Package | Version | Docs | Description |
 | --- | --- | --- | --- |
-| [region-core](https://github.com/regionjs/region-core) | [![version](https://img.shields.io/npm/v/region-core.svg?style=flat-square)](http://npm.im/region-core) | [![](https://img.shields.io/badge/API-markdown-blue.svg?style=flat-square)](https://github.com/regionjs/region-core/blob/master/docs/Document.md) | The core of Region: set, load & connect |
-| [region-shortcut](https://github.com/regionjs/region-shortcut) | [![version](https://img.shields.io/npm/v/region-shortcut.svg?style=flat-square)](http://npm.im/region-shortcut) | [![](https://img.shields.io/badge/API-markdown-blue.svg?style=flat-square)](https://github.com/regionjs/region-shortcut/blob/master/README.md) | Wrapped core with global Provider, set, load & connect |
-| [region-form](https://github.com/regionjs/region-form) | [![version](https://img.shields.io/npm/v/region-form.svg?style=flat-square)](http://npm.im/region-form) | [![](https://img.shields.io/badge/API-markdown-blue.svg?style=flat-square)](https://github.com/regionjs/region-form/blob/master/README.md) | RegionForm extends Region: bindWith any ant-design form item |
+| [region-core](https://github.com/regionjs/region-core) | [![version](https://img.shields.io/npm/v/region-core.svg?style=flat-square)](http://npm.im/region-core) | [![](https://img.shields.io/badge/API-markdown-blue.svg?style=flat-square)](https://github.com/regionjs/region-core/blob/master/docs/Document.md) | Region 的核心，提供 set, load & connect |
+| [region-shortcut](https://github.com/regionjs/region-shortcut) | [![version](https://img.shields.io/npm/v/region-shortcut.svg?style=flat-square)](http://npm.im/region-shortcut) | [![](https://img.shields.io/badge/API-markdown-blue.svg?style=flat-square)](https://github.com/regionjs/region-shortcut/blob/master/README.md) | region-core 的封装，提供全局的 Provider, set, load & connect |
+| [region-form](https://github.com/regionjs/region-form) | [![version](https://img.shields.io/npm/v/region-form.svg?style=flat-square)](http://npm.im/region-form) | [![](https://img.shields.io/badge/API-markdown-blue.svg?style=flat-square)](https://github.com/regionjs/region-form/blob/master/README.md) | RegionForm，bindWith 可以绑定任何 ant-design 表单组件 |
 
 ## Get Started
 
@@ -21,7 +21,7 @@ English | [中文](https://github.com/regionjs/region-form/blob/master/docs/READ
 npm i region-form
 ```
 
-Create a file named `Provider.js`
+创建一个文件名为 `Provider.js`
 
 ```jsx harmony
 import { getProvider } from 'region-form';
@@ -33,9 +33,9 @@ const Provider = getProvider({ store, reducers});
 export default Provider;
 ```
 
-see [getProvider](https://github.com/regionjs/region-core/blob/master/docs/PrivateAPI.md#getProvider)
+参见 [getProvider](https://github.com/regionjs/region-core/blob/master/docs/PrivateAPI.md#getProvider)
 
-Then bind your form item
+然后绑定表单项
 
 ```jsx harmony
 import { RegionFrom } from 'region-form';
@@ -89,27 +89,8 @@ const Result = ({ a, b, c, d }) => (
 const ConnectResult = region.connectWith(['a', 'b', 'c', 'd'], Result);
 ```
 
-see also [Region](https://github.com/regionjs/region-core/blob/master/docs/Document.md#Region)
+参见 [Region](https://github.com/regionjs/region-core/blob/master/docs/Document.md#Region)
 
-## Example
+## 示例
 
-[Online Example](https://dancerphil.github.io/redux-loadings/#BindForm)
-
-## Contribute
-
-Region is Extremely easy to extend, fire a issue if you have some great idea.
-
-```javascript
-import { Region } from 'region-core';
-
-class MyRegion extends Region {
-  constructor(...args) {
-    super(...args);
-    this.someFunc = this.someFunc.bind(this); // in case you are not using class field
-  }
-
-  someFunc() {}
-}
-```
-
-As for pull request, make sure to add test for your code.
+[在线示例](https://dancerphil.github.io/redux-loadings/#BindForm)
