@@ -1,4 +1,4 @@
-import { Input, Radio, Checkbox, Transfer } from 'antd';
+import { Input, Radio, Transfer } from 'antd';
 
 const adapter = (Component) => {
   const selectEvent = e => e.target.value;
@@ -10,11 +10,10 @@ const adapter = (Component) => {
     case Input.Password:
     case Radio.Group:
       return ['value', 'onChange', selectEvent];
-    case Checkbox.Group:
-      return ['checked', 'onChange', selectValue];
     case Transfer:
       return ['targetKeys', 'onChange', selectValue];
     // case AutoComplete:
+    // case Checkbox.Group:
     // case Cascader:
     // case DatePicker:
     // case DatePicker.MonthPicker:

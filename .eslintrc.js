@@ -8,7 +8,7 @@ module.exports = {
   "rules": {
     "camelcase": [2, {allow: ["^private_"]}],
     "max-len": 0,
-    "no-console": 0,
+    "no-console": [2, { allow: ["debug", "warn", "error", "groupCollapsed", "groupEnd"] }],
     "no-plusplus": 0,
     "object-curly-newline": 0,
     "import/prefer-default-export": 0,

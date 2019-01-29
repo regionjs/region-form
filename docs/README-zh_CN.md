@@ -7,13 +7,13 @@
 
 双向绑定的 ant-design 表单，自动的数据管理。极其简单的 API！
 
-[English](https://github.com/regionjs/region-core/blob/master/docs/README.md) | 中文
+[English](https://github.com/regionjs/region-form/blob/master/docs/README.md) | 中文
 
 | Package | Version | Docs | Description |
 | --- | --- | --- | --- |
-| [region-core](https://github.com/regionjs/region-core) | [![version](https://img.shields.io/npm/v/region-core.svg?style=flat-square)](http://npm.im/region-core) | [![](https://img.shields.io/badge/API-blue.svg?style=flat-square)](https://github.com/regionjs/region-core/blob/master/docs/Document.md) | Region 的核心，提供 set, load & connect |
-| [region-shortcut](https://github.com/regionjs/region-shortcut) | [![version](https://img.shields.io/npm/v/region-shortcut.svg?style=flat-square)](http://npm.im/region-shortcut) | - | region-core 的封装，提供全局的 Provider, set, load & connect |
-| [region-form](https://github.com/regionjs/region-form) | [![version](https://img.shields.io/npm/v/region-form.svg?style=flat-square)](http://npm.im/region-form) | [![](https://img.shields.io/badge/API-blue.svg?style=flat-square)](https://github.com/regionjs/region-form/blob/master/README.md) | RegionForm，bindWith 可以绑定任何 ant-design 表单组件 |
+| [region-core](https://github.com/regionjs/region-core) | [![version](https://img.shields.io/npm/v/region-core.svg?style=flat-square)](http://npm.im/region-core) | [![](https://img.shields.io/badge/API-markdown-blue.svg?style=flat-square)](https://github.com/regionjs/region-core/blob/master/docs/Document.md) | Region 的核心，提供 set, load & connect |
+| [region-shortcut](https://github.com/regionjs/region-shortcut) | [![version](https://img.shields.io/npm/v/region-shortcut.svg?style=flat-square)](http://npm.im/region-shortcut) | [![](https://img.shields.io/badge/API-markdown-blue.svg?style=flat-square)](https://github.com/regionjs/region-shortcut/blob/master/README.md) | region-core 的封装，提供全局的 Provider, set, load & connect |
+| [region-form](https://github.com/regionjs/region-form) | [![version](https://img.shields.io/npm/v/region-form.svg?style=flat-square)](http://npm.im/region-form) | [![](https://img.shields.io/badge/API-markdown-blue.svg?style=flat-square)](https://github.com/regionjs/region-form/blob/master/README.md) | RegionForm，bindWith 可以绑定任何 ant-design 表单组件 |
 
 ## Get Started
 
@@ -39,6 +39,7 @@ export default Provider;
 
 ```jsx harmony
 import { RegionFrom } from 'region-form';
+import { Card, Input, Switch, Radio, Checkbox } from 'antd';
 
 const region = new RegionFrom({
   name: 'form',
@@ -57,6 +58,13 @@ const region = new RegionFrom({
     d: ['option1', 'option2']
   },
 });
+
+const validate = async () => {
+  await new Promise(resolve => setTimeout(resolve, 1000));
+  if (Math.random() < 0.5) {
+    throw new Error('value is invalid');
+  }
+};
 
 const SwitchA = region.bindWith('a', Switch, { validate });
 const InputB = region.bindWith('b', Input, { validate });
