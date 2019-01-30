@@ -1,8 +1,6 @@
 import React from 'react';
-import { Region } from 'region-core';
 import { Form } from 'antd';
 import { omit, pick } from 'lodash';
-import defalutAdapter from './adapter';
 
 const formItemPropsList = ['colon', 'extra', 'hasFeedback', 'help', 'label', 'labelCol', 'required', 'validateStatus', 'wrapperCol'];
 
@@ -19,19 +17,19 @@ const getValidateStatus = ({ loading, error, value }) => {
   return 'success';
 };
 
-class RegionForm extends Region {
-  constructor(option = {}) {
-    let combinedOption = option;
-    if (typeof option === 'string') {
-      combinedOption = { name: option };
+const wrapRegionForm = (Region, adapter) => {
+  class RegionForm extends Region {
+    constructor(option = {}) {
+      let combinedOption = option;
+      if (typeof option === 'string') {
+        combinedOption = { name: option };
+      }
+      super(Object.assign({ name: 'bindForm' }, combinedOption));
+      const { defaultProps = {}, initialValues = {}, labels = {} } = combinedOption;
+      this.defaultProps = defaultProps;
+      this.initialValues = initialValues;
+      this.labels = labels;
     }
-    super(Object.assign({ name: 'bindForm' }, combinedOption));
-    const { defaultProps = {}, initialValues = {}, labels = {} } = combinedOption;
-    this.defaultProps = defaultProps;
-    this.initialValues = initialValues;
-    this.labels = labels;
-    this.adapter = defalutAdapter;
-  }
 
   handlerFactory = (key, selector, validate) => (value) => {
     const selectedValue = selector(value);
@@ -42,7 +40,7 @@ class RegionForm extends Region {
   }
 
   bindWith = (key, Component, { validate } = {}) => {
-    const { set, connectWith, handlerFactory, adapter, defaultProps, initialValues, labels } = this;
+    const { set, connectWith, handlerFactory, defaultProps, initialValues, labels } = this;
     const initialValue = initialValues[key];
     const label = labels[key];
     set(key, initialValue);
@@ -67,6 +65,8 @@ class RegionForm extends Region {
     };
     return connectWith(key, Hoc);
   }
-}
+  }
+  return RegionForm;
+};
 
-export default RegionForm;
+export default wrapRegionForm;

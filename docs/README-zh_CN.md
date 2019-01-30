@@ -91,6 +91,16 @@ const ConnectResult = region.connectWith(['a', 'b', 'c', 'd'], Result);
 
 参见 [Region](https://github.com/regionjs/region-core/blob/master/docs/Document.md#Region)
 
+- 如果你已经用了 region-core，或者你为自己的组件库提供了一个 adapter
+
+```jsx harmony
+import { Region } from 'region-core';
+import wrapRegionForm from 'region-form/lib/wrapRegionForm';
+import adapter from 'region-form/lib/adapter/antd';
+
+const RegionForm = wrapRegionForm(Region, adapter);
+```
+
 ## 示例
 
 [在线示例](https://dancerphil.github.io/redux-loadings/#BindForm)
