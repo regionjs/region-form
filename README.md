@@ -21,7 +21,7 @@ English | [中文](https://github.com/regionjs/region-form/blob/master/docs/READ
 npm i region-form
 ```
 
-Create a file named `Provider.js`
+- Create a file named `Provider.js`
 
 ```jsx harmony
 import { getProvider } from 'region-form';
@@ -35,7 +35,7 @@ export default Provider;
 
 see [getProvider](https://github.com/regionjs/region-core/blob/master/docs/PrivateAPI.md#getProvider)
 
-Then bind your form item
+- Then bind your form item
 
 ```jsx harmony
 import { RegionFrom } from 'region-form';
@@ -90,6 +90,16 @@ const ConnectResult = region.connectWith(['a', 'b', 'c', 'd'], Result);
 ```
 
 see also [Region](https://github.com/regionjs/region-core/blob/master/docs/Document.md#Region)
+
+- If you are using region-core, or you are using own ui library with an unique adapter provided
+
+```jsx harmony
+import { Region } from 'region-core';
+import wrapRegionForm from 'region-form/lib/wrapRegionForm';
+import adapter from 'region-form/lib/adapter/antd';
+
+const RegionForm = wrapRegionForm(Region, adapter);
+```
 
 ## Example
 
