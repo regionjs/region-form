@@ -1,9 +1,9 @@
 # region-form
 
-[![version](https://img.shields.io/npm/v/redux-loadings.svg?style=flat-square)](http://npm.im/redux-loadings)
-[![npm downloads](https://img.shields.io/npm/dm/redux-loadings.svg?style=flat-square)](https://www.npmjs.com/package/redux-loadings)
-[![codecov](https://codecov.io/gh/dancerphil/redux-loadings/branch/develop/graph/badge.svg)](https://codecov.io/gh/dancerphil/redux-loadings)
-[![MIT License](https://img.shields.io/npm/l/redux-loadings.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+[![version](https://img.shields.io/npm/v/region-form.svg?style=flat-square)](http://npm.im/region-form)
+[![npm downloads](https://img.shields.io/npm/dm/region-form.svg?style=flat-square)](https://www.npmjs.com/package/region-form)
+[![codecov](https://codecov.io/gh/regionjs/region-form/branch/develop/graph/badge.svg)](https://codecov.io/gh/regionjs/region-form)
+[![MIT License](https://img.shields.io/npm/l/region-form.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 双向绑定的 ant-design 表单，自动的数据管理。极其简单的 API！
 
@@ -103,4 +103,4 @@ const RegionForm = wrapRegionForm(Region, adapter);
 
 ## 示例
 
-[在线示例](https://dancerphil.github.io/redux-loadings/#BindForm)
+[在线示例](https://regionjs.github.io/region-core/#BindForm)

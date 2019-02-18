@@ -1,9 +1,9 @@
 # region-form
 
-[![version](https://img.shields.io/npm/v/redux-loadings.svg?style=flat-square)](http://npm.im/redux-loadings)
-[![npm downloads](https://img.shields.io/npm/dm/redux-loadings.svg?style=flat-square)](https://www.npmjs.com/package/redux-loadings)
-[![codecov](https://codecov.io/gh/dancerphil/redux-loadings/branch/develop/graph/badge.svg)](https://codecov.io/gh/dancerphil/redux-loadings)
-[![MIT License](https://img.shields.io/npm/l/redux-loadings.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+[![version](https://img.shields.io/npm/v/region-form.svg?style=flat-square)](http://npm.im/region-form)
+[![npm downloads](https://img.shields.io/npm/dm/region-form.svg?style=flat-square)](https://www.npmjs.com/package/region-form)
+[![codecov](https://codecov.io/gh/regionjs/region-form/branch/develop/graph/badge.svg)](https://codecov.io/gh/regionjs/region-form)
+[![MIT License](https://img.shields.io/npm/l/region-form.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 Bind with ant-design form item, automatic data control. Extremely simple API!
 
@@ -103,7 +103,7 @@ const RegionForm = wrapRegionForm(Region, adapter);
 
 ## Example
 
-[Online Example](https://dancerphil.github.io/redux-loadings/#BindForm)
+[Online Example](https://regionjs.github.io/region-core/#BindForm)
 
 ## Contribute
 
