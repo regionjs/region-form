@@ -1,6 +1,6 @@
 {
   "name": "region-form",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "description": "region-form",
   "keywords": [
     "react",
@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.11",
-    "region-core": "^0.6.5"
+    "region-core": "^0.6.6"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
