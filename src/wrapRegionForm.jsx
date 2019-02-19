@@ -47,6 +47,7 @@ const wrapRegionForm = (Region, adapter) => {
     const [valueName, handlerName, selector] = adapter(Component);
     const handler = handlerFactory(key, selector, validate || defaultProps.validate);
 
+    // TODO use useProps
     const Hoc = ({ loading, error, [key]: value, ...props }) => {
       const validateStatus = getValidateStatus({ loading, error, value });
       const combinedProps = Object.assign({ label }, defaultProps, props);
