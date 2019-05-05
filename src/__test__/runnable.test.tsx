@@ -1,10 +1,12 @@
-import React from 'react';
-import renderer from 'react-test-renderer';
-import { AutoComplete, Checkbox, Cascader, DatePicker, InputNumber, Input, Mention, Rate, Radio, Switch, Slider, Select, TreeSelect, Transfer, TimePicker } from 'antd';
-import { getProvider, RegionForm } from '..';
+import * as React from 'react';
+import * as reactTestRenderer from 'react-test-renderer';
+import {
+  AutoComplete, Checkbox, Cascader, DatePicker, InputNumber, Input, Mention, Rate, Radio,
+  Switch, Slider, Select, TreeSelect, Transfer, TimePicker,
+} from 'antd';
+import { RegionForm } from '..';
 
 describe('runnable', () => {
-  const Provider = getProvider();
   const region = new RegionForm({
     enableLog: false,
     initialValues: { Slider: 0, Transfer: [] },
@@ -34,16 +36,16 @@ describe('runnable', () => {
       // bindWith('Transfer', Transfer),
       bindWith('TimePicker', TimePicker),
     ];
-    expect(() => components.map(Component => renderer.create(<Provider><Component /></Provider>))).not.toThrow();
+    expect(() => components.map(Component => reactTestRenderer.create(<Component />))).not.toThrow();
   });
 
   test('Slider', () => {
     const SliderX = bindWith('Slider', Slider);
-    expect(() => renderer.create(<Provider><SliderX /></Provider>)).not.toThrow();
+    expect(() => reactTestRenderer.create(<SliderX />)).not.toThrow();
   });
 
   test('Transfer', () => {
     const TransferX = bindWith('Transfer', Transfer);
-    expect(() => renderer.create(<Provider><TransferX /></Provider>)).not.toThrow();
+    expect(() => reactTestRenderer.create(<TransferX />)).not.toThrow();
   });
 });

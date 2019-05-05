@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Form } from 'antd';
 import { omit, pick } from 'lodash';
 
@@ -19,13 +19,13 @@ const getValidateStatus = ({ loading, error, value }) => {
 
 const wrapRegionForm = (Region, adapter) => {
   class RegionForm extends Region {
-    constructor(option = {}) {
-      let combinedOption = option;
-      if (typeof option === 'string') {
-        combinedOption = { name: option };
-      }
-      super(Object.assign({ name: 'bindForm' }, combinedOption));
-      const { defaultProps = {}, initialValues = {}, labels = {} } = combinedOption;
+    defaultProps: any
+    initialValues: any
+    labels: any
+
+    constructor(option: any = {}) {
+      super(option);
+      const { defaultProps = {}, initialValues = {}, labels = {} } = option;
       this.defaultProps = defaultProps;
       this.initialValues = initialValues;
       this.labels = labels;
@@ -39,7 +39,7 @@ const wrapRegionForm = (Region, adapter) => {
     }
   }
 
-  bindWith = (key, Component, { validate } = {}) => {
+  bindWith = (key, Component, { validate }: any = {}) => {
     const { set, connectWith, handlerFactory, defaultProps, initialValues, labels } = this;
     const initialValue = initialValues[key];
     const label = labels[key];

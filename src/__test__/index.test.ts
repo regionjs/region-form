@@ -1,5 +1,5 @@
 import { Region } from 'region-core';
-import { getProvider, RegionForm } from '..';
+import { RegionForm } from '..';
 
 describe('exports', () => {
   test('exports', () => {
@@ -8,7 +8,6 @@ describe('exports', () => {
   });
 
   test('bindWith', () => {
-    getProvider();
     const region = new RegionForm();
     expect(typeof region.bindWith).toBe('function');
   });

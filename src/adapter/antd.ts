@@ -1,8 +1,9 @@
 import { Input, Radio, Transfer } from 'antd';
 
-const adapter = (Component) => {
-  const selectEvent = e => e.target.value;
-  const selectValue = value => value;
+const selectEvent = (e: any) => e.target.value;
+const selectValue = (value: any) => value;
+
+export const antdAdapter = (Component: any) => {
   switch (Component) {
     case Input:
     case Input.TextArea:
@@ -32,6 +33,3 @@ const adapter = (Component) => {
     }
   }
 };
-
-
-export default adapter;
