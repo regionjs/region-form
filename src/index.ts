@@ -1,6 +1,6 @@
 import RegionForm from './RegionForm';
 
-const createAntdFormRegion = (options: any) => {
+const createAntdFormRegion = (options?: any) => {
   return new RegionForm(options, true);
 };
 

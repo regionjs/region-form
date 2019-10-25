@@ -3,9 +3,9 @@ import {
   AutoComplete, Checkbox, Cascader, DatePicker, InputNumber, Input, Mention, Rate, Radio,
   Switch, Slider, Select, TreeSelect, Transfer, TimePicker,
 } from 'antd';
-import { RegionForm } from '../index';
+import { createAntdFormRegion } from '../index';
 
-export const region = new RegionForm({
+export const region = createAntdFormRegion({
   initialValues: { Slider: 0, Transfer: [] },
 });
 

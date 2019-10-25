@@ -3,6 +3,7 @@ import { Form } from 'antd';
 import { omit, pick } from 'lodash';
 import { createCombinedRegion } from 'region-core';
 import { antdAdapter as adapter } from './adapter/antd';
+import { region } from './__test__/components';
 
 const formItemPropsList = ['colon', 'extra', 'hasFeedback', 'help', 'label', 'labelCol', 'required', 'validateStatus', 'wrapperCol'];
 
@@ -40,6 +41,21 @@ class RegionForm {
   initialValues: any;
   labels: any;
   region = createCombinedRegion();
+
+  set = this.region.set;
+  setBy = this.region.setBy;
+  load = this.region.load;
+  loadBy = this.region.loadBy;
+  getProps = this.region.getProps;
+  getValue = this.region.getValue;
+  getLoading = this.region.getLoading;
+  getError = this.region.getError;
+  getFetchTime = this.region.getFetchTime;
+  useProps = this.region.useProps;
+  useValue = this.region.useValue;
+  useLoading = this.region.useLoading;
+  useError = this.region.useError;
+  useFetchTime = this.region.useFetchTime;
 
   constructor(option: any = {}, ignoreWarning?: boolean) {
     if (!ignoreWarning) {

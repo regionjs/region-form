@@ -31,10 +31,10 @@ const keys = [
 ];
 
 export const antd = () => {
-  const results = region.region.useProps(keys);
+  const results = region.useProps(keys);
   return (
     <React.Fragment>
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {components.map(Component => <Component key={Component.displayName} />)}
       </div>
       {JSON.stringify(results)}
