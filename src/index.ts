@@ -1,4 +1,7 @@
-import { antdAdapter } from './adapter/antd';
-import withAdapter from './withAdapter';
+import RegionForm from './RegionForm';
 
-export const RegionForm = withAdapter(antdAdapter);
+const createAntdFormRegion = (options: any) => {
+  return new RegionForm(options, true);
+};
+
+export { RegionForm, createAntdFormRegion };
