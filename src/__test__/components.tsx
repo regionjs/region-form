@@ -5,13 +5,13 @@ import {
 } from 'antd';
 import { RegionForm } from '../index';
 
-const region = new RegionForm({
+export const region = new RegionForm({
   initialValues: { Slider: 0, Transfer: [] },
 });
 
 const { bindWith } = region;
 
-const components = [
+export const components = [
   bindWith('AutoComplete', AutoComplete),
   bindWith('Checkbox.Group', Checkbox.Group),
   bindWith('Cascader', Cascader),
@@ -34,5 +34,3 @@ const components = [
   bindWith('Transfer', Transfer),
   bindWith('TimePicker', TimePicker),
 ];
-
-export default components;

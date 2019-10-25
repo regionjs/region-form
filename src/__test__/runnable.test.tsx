@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as reactTestRenderer from 'react-test-renderer';
-import components from './components';
+import { components } from './components';
 
 describe('runnable', () => {
   test('antd', () => {
