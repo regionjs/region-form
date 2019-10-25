@@ -1,5 +1,4 @@
-import { Region } from 'region-core';
 import { antdAdapter } from './adapter/antd';
-import wrapRegionForm from './wrapRegionForm';
+import withAdapter from './withAdapter';
 
-export const RegionForm = wrapRegionForm(Region, antdAdapter);
+export const RegionForm = withAdapter(antdAdapter);
